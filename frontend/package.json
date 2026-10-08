@@ -2,16 +2,17 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
+    "test": "node tests/unit/test_gameMode.js",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "test:unit": "echo 'No unit tests yet'",
-    "test:ui": "echo 'No UI tests yet'",
-    "test": "node scripts/verify_ui.js"
+    "test:ui": "echo 'No UI tests yet'"
   },
+  "dependencies": {},
   "devDependencies": {
+    "assert": "^2.0.0",
     "vite": "^3.0.0",
     "typescript": "^4.0.0"
-  },
-  "dependencies": {}
+  }
 }
