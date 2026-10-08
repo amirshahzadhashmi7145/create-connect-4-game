@@ -1,5 +1,7 @@
 let currentMode = '1-player';
 
+let playerStats = { wins: 0, losses: 0 };
+
 function switchGameMode() {
     currentMode = currentMode === '1-player' ? '2-player' : '1-player';
     displayConfirmationMessage();
@@ -24,4 +26,19 @@ function displayWinCondition(score) {
     document.body.appendChild(scoreDisplay);
 }
 
-module.exports = { switchGameMode, displayWinCondition };
+function recordWin() {
+    playerStats.wins += 1;
+}
+
+function recordLoss() {
+    playerStats.losses += 1;
+}
+
+function displayPlayerStats() {
+    const statsDisplay = document.createElement('div');
+    statsDisplay.className = 'stats-display';
+    statsDisplay.innerText = `Wins: ${playerStats.wins}, Losses: ${playerStats.losses}`;
+    document.body.appendChild(statsDisplay);
+}
+
+module.exports = { switchGameMode, displayWinCondition, recordWin, recordLoss, displayPlayerStats };
