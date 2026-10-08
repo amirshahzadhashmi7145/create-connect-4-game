@@ -28,10 +28,12 @@ function displayWinCondition(score) {
 
 function recordWin() {
     playerStats.wins += 1;
+    displayPlayerStats(); // Update stats display immediately
 }
 
 function recordLoss() {
     playerStats.losses += 1;
+    displayPlayerStats(); // Update stats display immediately
 }
 
 function displayPlayerStats() {
