@@ -10,4 +10,18 @@ function displayConfirmationMessage() {
     alert(message);
 }
 
-module.exports = { switchGameMode };
+function displayWinCondition(score) {
+    // Display confetti effect
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000); // Remove confetti after 3 seconds
+
+    // Display score count
+    const scoreDisplay = document.createElement('div');
+    scoreDisplay.className = 'score-display';
+    scoreDisplay.innerText = `Score: ${score}`;
+    document.body.appendChild(scoreDisplay);
+}
+
+module.exports = { switchGameMode, displayWinCondition };
