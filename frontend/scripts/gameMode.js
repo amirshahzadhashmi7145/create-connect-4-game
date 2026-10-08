@@ -7,6 +7,15 @@ function switchGameMode() {
     displayConfirmationMessage();
 }
 
+function selectPlayOption(option) {
+    if (option === 'local' || option === 'online') {
+        currentMode = option === 'local' ? '2-player-local' : '2-player-online';
+        displayConfirmationMessage();
+    } else {
+        alert('Invalid option selected. Please choose either local or online.');
+    }
+}
+
 function displayConfirmationMessage() {
     const message = `Game mode switched to ${currentMode}`;
     alert(message);
@@ -43,4 +52,4 @@ function displayPlayerStats() {
     document.body.appendChild(statsDisplay);
 }
 
-module.exports = { switchGameMode, displayWinCondition, recordWin, recordLoss, displayPlayerStats };
+module.exports = { switchGameMode, selectPlayOption, displayWinCondition, recordWin, recordLoss, displayPlayerStats };
